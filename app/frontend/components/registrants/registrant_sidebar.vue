@@ -108,9 +108,9 @@ export default {
       if (this.selected.badge){
         return this.selected.badge
       } else if (this.selected.preferred_name_last || this.selected.preferred_name_first) {
-        return `${this.selected.preferred_name_first} ${this.selected.preferred_name_last}`
+        return `${this.selected.preferred_name_first || ''} ${this.selected.preferred_name_last || ''}`.trim()
       } else {
-        return `${this.selected.first_name} ${this.selected.last_name}`
+        return `${this.selected.first_name || ''} ${this.selected.last_name || ''}`.trim()
       }
     },
     badge_content: function() {
